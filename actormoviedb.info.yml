@@ -1,0 +1,6 @@
+name: actor-movie database
+description: This provides the database for actor and movie for the current task
+package: custom
+type: module
+core: 8.x
+version: 1.0
