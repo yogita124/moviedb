@@ -1,0 +1,7 @@
+actormoviedb_pop_up:
+  version: 2.0
+  js:
+    js/pop_up.js: {}
+  dependencies: 
+    - core/jquery
+    - core/drupal.dialog.ajax 

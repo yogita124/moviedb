@@ -1,0 +1,55 @@
+actor:
+  path: '/actor-custom'
+  defaults:
+    _controller: '\Drupal\actormoviedb\Controller\ActorMovieController::actor'
+    _title: 'Actors'
+  requirements:
+    _permission: 'access content'
+
+movie:
+  path: '/movie-custom'
+  defaults:
+    _controller: '\Drupal\actormoviedb\Controller\ActorMovieController::movie'
+    _title: 'Movies'
+  requirements:
+    _permission: 'access content'
+
+actor_popup:
+  path: '/actor-movie-custom/{actorId}/{movieId}'
+  defaults:
+    _controller: '\Drupal\actormoviedb\Controller\ActorMovieController::pop_up'
+    _title: 'Actor-Movie'
+  requirements:
+    _permission: 'access content'
+
+search_page:
+  path: '/search-page'
+  defaults:
+    _form: '\Drupal\actormoviedb\Form\searchBox'
+    _title: 'search'
+  requirements:
+    _permission: 'access content'
+
+search:
+  path: '/search'
+  defaults:
+    _controller: '\Drupal\actormoviedb\Controller\ActorMovieController::show_search'
+    _title: 'search'
+  requirements:
+    _permission: 'access content'
+
+actormoviedb.settings_form:
+  path: '/actormoviedb/settings'
+  defaults:
+    _form: '\Drupal\actormoviedb\Form\configForm'
+    _title: 'Form'
+  requirements:
+    _permission: 'access administration pages'
+
+test_block:
+  path: '/block'
+  defaults:
+    _controller: '\Drupal\actormoviedb\Controller\ActorMovieController::show_block'
+    _title: 'Block'
+  requirements:
+    _permission: 'access content'
