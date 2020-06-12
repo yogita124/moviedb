@@ -19,16 +19,18 @@
    */
   class formBlock extends BlockBase {
     public function form_block() {
+      // Fetch the configurations that are loaded in the db.
       $config = \Drupal::config('actormoviedb.settings');
+      // Fetch title from that config.
       $title = $config->get('title');
-      // kint($title);
+      // Fetch description from that config.
       $description = $config->get('description');
-      // kint($description);
+      // Fetch image from that config.
       $imageId = $config->get('image');
-      // kint($imageId);
       $imageEntityLoad = \Drupal\file\Entity\File::load($imageId[0]);
+      // Fetch url of the image source.
       $image = $imageEntityLoad->url();
-      // kint($image);
+      // Return the fetched values and theme.
       return array(
         'title' => $title,
         'description' => $description,
@@ -36,6 +38,11 @@
         'theme' => 'form_block',
       );
     }
+    /**
+     * To render block.
+     *
+     * @return void
+     */
     public function build() {
       $returnVariable = $this->form_block();
       return array(
